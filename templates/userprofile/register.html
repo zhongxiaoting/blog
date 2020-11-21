@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    登录
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <form action="." method="post">
+                    {% csrf_token %}
+                    {# 账号 #}
+                    <div class="form-group col-md-4">
+                        <label for="username">用户名</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    {# 邮箱 #}
+                    <div class="form-group col-md-4">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    {# 密码 #}
+                    <div class="form-group col-md-4">
+                        <label for="password">密码</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    {# 确认密码 #}
+                    <div class="form-group col-md-4">
+                        <label for="password">确认密码</label>
+                        <input type="password" class="form-control" id="password2" name="password2" required>
+                    </div>
+                    {# 提交按钮 #}
+                    <button type="submit" class="btn btn-primary">注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: trim
+Version: 0.3
+Summary: Trims trailing whitespace from files.
+Home-page: https://github.com/myint/trim
+Author: Steven Myint
+Author-email: UNKNOWN
+License: Expat License
+Description: ====
+        trim
+        ====
+        
+        Trims trailing whitespace from files.
+        
+        .. image:: https://travis-ci.org/myint/trim.png
+            :target: https://travis-ci.org/myint/trim
+            :alt: Build status
+        
+        -----
+        Usage
+        -----
+        
+        Modify a single file::
+        
+            $ trim example.py
+        
+        Recursively modify files in a directory::
+        
+            $ trim .
+        
+Keywords: trim,strip,format,trailing,whitespace
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License

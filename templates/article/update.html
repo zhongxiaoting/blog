@@ -1,0 +1,56 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    修改文章
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <form action="." method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {# 文章标题图 #}
+                    <div class="form-group">
+                        <label for="avatar">标题图</label>
+                        <input type="file" class="form-control-file" name="avatar" id="avatar">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">文章标题</label>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ article.title }}">
+                    </div>
+                    {# 文章栏目 #}
+                    <div class="form-group">
+                        <label for="column">栏目</label>
+                        <select name="column" id="column" class="form-control">
+                            <option value="none">请选择栏目</option>
+                            {% for column in columns %}
+                                <option value="{{ column.id }}"
+                                        {% if column.id == article.column.id %}
+                                        selected
+                                        {% endif %}
+                                >
+                                    {{ column }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {# 文章标签 #}
+                    <div class="form-group">
+                        <label for="tags">标签</label>
+                        <input type="text" class="form-control col-3" id="tags" name="tags" value="{{ tags }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="body">文章正文</label>
+                        <textarea name="body" class="form-control" id="body" cols="30"
+                                  rows="12">{{ article.body }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="float: right">完成</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
